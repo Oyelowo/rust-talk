@@ -53,7 +53,9 @@ Each of these issues represents a barrier to efficiency and effectiveness in dat
     ![Complex Transactions](https://raw.githubusercontent.com/Oyelowo/rust-talk/master/RUST_TALK/complex_transaction_as_rust.png)
 
 Here's an example of a more complex query leveraging Rust’s idiomatic structures. Notice the `query_turbo!` macro:
+
 ```rust
+
     let account = Account::table():
     let id1 = &Account::create_id("one".to_string());
     let id2 = &Account::create_id("two".to_string());
@@ -140,7 +142,6 @@ Here's an example of a more complex query leveraging Rust’s idiomatic structur
         .from(id1..=id2)
         .return_many::<Account>(db.clone())
         .await?;
-
 ```
 
 
@@ -157,7 +158,9 @@ Here's an example of a more complex query leveraging Rust’s idiomatic structur
   **Example usage**
 
   a. Gathering resources from codebase and struct definitions
+  
 ```rust
+
 use surreal_orm::*;
 
 #[derive(Node, Serialize, Deserialize, Debug, Clone, Default)]
@@ -243,7 +246,9 @@ async fn main() {
 }
 ```
 
+
 b. **Example migration commands**
+
 ```sh
 # Check information about all commands
 cargo run -- help
@@ -324,6 +329,7 @@ cargo run -- list --status pending
 # List applied migrations
 cargo run -- list --status applied
 ```
+
 
 7. **Embedded Migrations**:
    Migrations can also be embedded into your application
